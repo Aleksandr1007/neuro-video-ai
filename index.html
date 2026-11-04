@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090812">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NEURO VIDEO AI">
+  <title>NEURO VIDEO AI</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="NEURO VIDEO AI">
+      <span class="brand-mark">N</span><span>NEURO <b>VIDEO AI</b><small>ТВОЯ ТВОРЧЕСКАЯ СТУДИЯ</small></span>
+    </a>
+    <span class="status"><i></i> БЕТА-ВЕРСИЯ</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span>✦</span> ИИ-СТУДИЯ ВИДЕО</div>
+      <h1>Преврати идею<br>в <em>движение.</em></h1>
+      <p>Создавай видео из текста и фотографий в своём стиле.</p>
+    </section>
+
+    <section class="creator panel">
+      <div class="section-heading">
+        <div><span class="step">01</span><h2>Что создаём?</h2></div>
+        <span class="muted">ВЫБЕРИ ИСТОЧНИК</span>
+      </div>
+      <div class="source-tabs" role="tablist">
+        <button class="source-tab active" data-source="text" role="tab" aria-selected="true">✍️ Из текста</button>
+        <button class="source-tab" data-source="image" role="tab" aria-selected="false">▧ Из фото</button>
+      </div>
+
+      <label class="field-label" for="prompt">ОПИШИ СВОЮ ИДЕЮ</label>
+      <textarea id="prompt" rows="4" placeholder="Например: кинематографичный кадр футуристического города ночью, дождь, отражения неоновых вывесок, плавное движение камеры..."></textarea>
+      <div class="prompt-foot"><span>Чем подробнее описание, тем лучше результат</span><span id="char-count">0 / 600</span></div>
+
+      <div id="upload-area" class="upload-area hidden">
+        <input id="photo-input" type="file" accept="image/*">
+        <div class="upload-icon">＋</div>
+        <strong>Добавь фотографию</strong>
+        <span>Нажми, чтобы выбрать изображение на iPhone</span>
+        <img id="photo-preview" alt="Предпросмотр выбранной фотографии" class="hidden">
+        <button id="remove-photo" class="text-button hidden" type="button">Удалить фото</button>
+      </div>
+
+      <div class="section-heading compact">
+        <div><span class="step">02</span><h2>Стиль видео</h2></div>
+      </div>
+      <div class="style-grid">
+        <button class="style-card selected" data-style="Реализм"><span>📷</span><b>Реализм</b></button>
+        <button class="style-card" data-style="Кино"><span>🎞️</span><b>Кино</b></button>
+        <button class="style-card" data-style="Аниме"><span>🌸</span><b>Аниме</b></button>
+        <button class="style-card" data-style="Мультфильм"><span>🪄</span><b>Мультфильм</b></button>
+      </div>
+
+      <div class="section-heading compact">
+        <div><span class="step">03</span><h2>Формат кадра</h2></div>
+      </div>
+      <div class="format-row">
+        <button class="format selected" data-format="9:16"><span class="portrait"></span><span><b>9:16</b><small>Reels / TikTok</small></span></button>
+        <button class="format" data-format="16:9"><span class="landscape"></span><span><b>16:9</b><small>YouTube</small></span></button>
+        <button class="format" data-format="1:1"><span class="square"></span><span><b>1:1</b><small>Квадрат</small></span></button>
+      </div>
+
+      <button id="create-button" class="create-button"><span>✦</span> Создать видео <span class="arrow">→</span></button>
+      <p class="disclaimer">Сейчас это демонстрационная версия интерфейса. Генератор видео ещё не подключён.</p>
+      <div id="notice" class="notice hidden" role="status"></div>
+    </section>
+
+    <section class="gallery">
+      <div class="section-heading">
+        <div><span class="step">04</span><h2>Мои проекты</h2></div>
+        <span class="muted">НА ЭТОМ УСТРОЙСТВЕ</span>
+      </div>
+      <div id="projects" class="empty-state">
+        <div class="empty-icon">▧</div><b>Здесь появятся твои видео</b>
+        <span>Созданные проекты будут отображаться в этой галерее.</span>
+      </div>
+    </section>
+    <footer>NEURO VIDEO AI <span>•</span> ТВОЯ ИИ-СТУДИЯ</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
